@@ -9,8 +9,8 @@ class LoginRequest(BaseModel):
 
 
 class TokenResponse(BaseModel):
-    accessToken: str
-    tokenType: str
+    access_token: str
+    token_type: str
     user: "UserOut"
 
 

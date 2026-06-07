@@ -14,7 +14,7 @@ def login(payload: schemas.LoginRequest, db: Session = Depends(getDb)):
     if not user or not verifyPassword(payload.password, user.hashedPassword):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
     token = createAccessToken({"sub": str(user.id), "role": user.role})
-    return {"accessToken": token, "tokenType": "bearer", "user": user}
+    return {"access_token": token, "token_type": "bearer", "user": user}
 
 
 @router.get("/me", response_model=schemas.UserOut)
