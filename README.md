@@ -25,7 +25,24 @@ A full-stack warehouse product verification system with bulk CSV ingestion, on-f
 - Backend: FastAPI · SQLAlchemy ORM · Pydantic v2 · JWT auth · sha256_crypt
 - Frontend: React 18 · Vite · TypeScript
 - Database: Supabase (PostgreSQL) — connection via `DATABASE_URL` env var
-- Deployment: Docker (backend containerised, frontend served via Vercel)
+- Deployment: Docker (backend containerised on Render, frontend on Vercel)
+
+---
+
+## Live Deployment
+
+| Service | Platform | URL |
+|---------|----------|-----|
+| Backend API | Render (Docker) | https://flipkart-assignment.onrender.com |
+| Frontend | Vercel | https://syam-flipkart-assignment.vercel.app/ |
+
+**Backend** is deployed on [Render](https://render.com) using a Docker build from the `Dockerfile` in `backend/`. Render builds the image on every push to the connected branch.
+
+**Frontend** is deployed on [Vercel](https://vercel.com). Set the `BACKEND_API_URL` environment variable in the Vercel project settings to point to the Render backend URL:
+
+```
+BACKEND_API_URL=https://flipkart-assignment.onrender.com
+```
 
 
 ## How the Backend Is Organised
@@ -368,9 +385,8 @@ Interactive API docs: http://localhost:8000/docs
 
 ```bash
 cd frontend
-npm install
-echo "VITE_API_URL=http://localhost:8000" > .env
-npm run dev
+bun 
+bun run dev
 ```
 
 Frontend: http://localhost:5173
