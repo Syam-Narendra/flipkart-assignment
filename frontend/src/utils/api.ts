@@ -1,4 +1,4 @@
-const BASE = import.meta.env.BACKEND_API_URL;
+const BASE = import.meta.env.VITE_BACKEND_API_URL;;
 
 async function request<T>(
   method: string,
