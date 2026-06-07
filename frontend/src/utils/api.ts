@@ -1,4 +1,4 @@
-const BASE = import.meta.env.BACKEND_API_URL || 'http://localhost:8000';
+const BASE = import.meta.env.BACKEND_API_URL;
 
 async function request<T>(
   method: string,
