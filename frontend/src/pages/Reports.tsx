@@ -112,13 +112,13 @@ export default function Reports() {
                       <td className="mono small">{log.product?.ean ?? '—'}</td>
                       <td>{log.user.name}</td>
                       <td className="muted small">
-                        {new Date(log.verified_at).toLocaleString()}
+                        {new Date(log.verifiedAt).toLocaleString()}
                       </td>
                       <td>
                         <span
-                          className={`badge ${log.has_photo ? 'badge-success' : 'badge-warning'}`}
+                          className={`badge ${log.hasPhoto ? 'badge-success' : 'badge-warning'}`}
                         >
-                          {log.has_photo ? 'Yes' : 'No'}
+                          {log.hasPhoto ? 'Yes' : 'No'}
                         </span>
                       </td>
                     </tr>

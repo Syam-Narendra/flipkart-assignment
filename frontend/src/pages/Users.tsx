@@ -157,7 +157,7 @@ export default function Users() {
                       <span className={`role-badge ${u.role}`}>{u.role}</span>
                     </td>
                     <td className="muted small">
-                      {new Date(u.created_at).toLocaleDateString()}
+                      {new Date(u.createdAt).toLocaleDateString()}
                     </td>
                   </tr>
                 ))}

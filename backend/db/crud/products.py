@@ -31,8 +31,8 @@ def bulkInsertProducts(db: Session, products: list[schemas.ProductCreate]) -> di
             newRows.append({
                 "wid": p.wid,
                 "ean": p.ean,
-                "manufacturing_date": p.manufacturingDate,
-                "expiry_date": p.expiryDate,
+                "manufacturingDate": p.manufacturingDate,
+                "expiryDate": p.expiryDate,
             })
             existingWids.add(p.wid)
             inserted += 1

@@ -102,17 +102,17 @@ export default function Products() {
                 </thead>
                 <tbody>
                   {filtered.map((p, i) => {
-                    const st = expiryStatus(p.expiry_date);
+                    const st = expiryStatus(p.expiryDate);
                     return (
                       <tr key={p.id}>
                         <td className="muted">{page * PAGE_SIZE + i + 1}</td>
                         <td className="mono bold">{p.wid}</td>
                         <td className="mono small">{p.ean}</td>
-                        <td className="small">{p.manufacturing_date}</td>
-                        <td className="small">{p.expiry_date}</td>
+                        <td className="small">{p.manufacturingDate}</td>
+                        <td className="small">{p.expiryDate}</td>
                         <td><span className={`badge ${st.cls}`}>{st.label}</span></td>
                         <td className="muted small">
-                          {new Date(p.created_at).toLocaleDateString()}
+                          {new Date(p.createdAt).toLocaleDateString()}
                         </td>
                       </tr>
                     );

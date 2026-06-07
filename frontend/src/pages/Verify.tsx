@@ -70,8 +70,8 @@ export default function Verify() {
       const product = await api.get<Product>(`/verify/${encodeURIComponent(wid.trim())}`);
       await api.post('/verify/log', {
         wid: product.wid,
-        has_photo: !!photoBlob,
-        photo_url: photoBlob ? 'demo://captured' : null,
+        hasPhoto: !!photoBlob,
+        photoUrl: photoBlob ? 'demo://captured' : null,
       });
       setResult(product);
     } catch (e: unknown) {
@@ -159,14 +159,14 @@ export default function Verify() {
               <div className="result-fields">
                 <Row label="WID" value={result.wid} mono />
                 <Row label="EAN" value={result.ean} mono />
-                <Row label="Manufacturing Date" value={result.manufacturing_date} />
+                <Row label="Manufacturing Date" value={result.manufacturingDate} />
                 <Row
                   label="Expiry Date"
                   value={
                     <>
-                      {result.expiry_date}&nbsp;
-                      <span className={`badge ${expiryStatus(result.expiry_date).cls}`}>
-                        {expiryStatus(result.expiry_date).label}
+                      {result.expiryDate}&nbsp;
+                      <span className={`badge ${expiryStatus(result.expiryDate).cls}`}>
+                        {expiryStatus(result.expiryDate).label}
                       </span>
                     </>
                   }
